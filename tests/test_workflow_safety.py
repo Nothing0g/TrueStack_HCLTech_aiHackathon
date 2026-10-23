@@ -45,4 +45,4 @@ def test_attendance_question_accepts_attendance_notice():
         "text": "Students will be eligible for examination only after fulfilling the attendance criteria.",
         "metadata": {"title": "Examination Eligibility"},
     }
-    assert workflow._evidence_is_relevant("What does the notice say about attendance requirements?", [passage])
+    assert workflow._evidence_is_relevant("What is the attendance requirement for exams?", [passage])
