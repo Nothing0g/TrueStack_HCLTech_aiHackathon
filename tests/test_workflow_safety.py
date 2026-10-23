@@ -29,3 +29,20 @@ def test_ambiguous_eligibility_requests_clarification(isolated_db):
     response = workflow.run_workflow("Am I eligible?", "S1001", "2026-10-23")
     assert response["answer_type"] == "clarification_needed"
     assert "examination" in response["answer"] or "placement" in response["answer"]
+
+
+
+def test_admission_question_rejects_unrelated_exam_notice():
+    passage = {
+        "text": "DTU Examination Branch notice. Students are eligible to take examinations subject to attendance criteria.",
+        "metadata": {"title": "Odd Semester Examination Eligibility"},
+    }
+    assert not workflow._evidence_is_relevant("What are the admission criteria to take admission in DTU?", [passage])
+
+
+def test_attendance_question_accepts_attendance_notice():
+    passage = {
+        "text": "Students will be eligible for examination only after fulfilling the attendance criteria.",
+        "metadata": {"title": "Examination Eligibility"},
+    }
+    assert workflow._evidence_is_relevant("What is the attendance requirement for exams?", [passage])

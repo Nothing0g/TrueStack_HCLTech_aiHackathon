@@ -11,17 +11,27 @@ NOT_FOUND = "I could not find this information in the authorised university sour
 st.set_page_config(page_title="TrueStack · Student Services", page_icon="🎓", layout="wide")
 st.markdown("""
 <style>
-:root { --ink:#1d2d2a; --muted:#66756f; --line:#e0e7e3; --paper:#fafbf8; --accent:#23665b; }
-.stApp { background:var(--paper); color:var(--ink); }
-.block-container { padding-top:2rem; max-width:1120px; }
-section[data-testid="stSidebar"] { background:#f1f5f1; border-right:1px solid var(--line); }
-.ts-kicker { color:var(--accent); font-size:.77rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
-.ts-title { color:var(--ink); font-size:2.05rem; font-weight:680; line-height:1.16; letter-spacing:-.035em; margin:.35rem 0 .6rem; }
-.ts-sub { color:var(--muted); font-size:1rem; max-width:740px; line-height:1.55; }
-.ts-panel { border:1px solid var(--line); border-radius:12px; background:white; padding:14px 16px; }
-.ts-chip { display:inline-block; border:1px solid var(--line); background:#fff; border-radius:7px; padding:4px 8px; font-size:.78rem; color:#47625a; }
-div[data-testid="stChatMessage"] { border:1px solid var(--line); border-radius:12px; background:white; }
-.stButton button { border-radius:8px; }
+:root { color-scheme:light; --ink:#172b28; --muted:#62736e; --line:#dfe7e2; --paper:#f6f8f5; --accent:#1e6b5c; --accent-soft:#e7f2ed; }
+html, body, [data-testid="stAppViewContainer"], .stApp { background:var(--paper) !important; color:var(--ink) !important; }
+[data-testid="stHeader"] { background:rgba(246,248,245,.94) !important; }
+.block-container { padding-top:1.7rem !important; padding-bottom:7rem !important; max-width:1160px !important; }
+section[data-testid="stSidebar"] { background:#edf3ef !important; border-right:1px solid var(--line) !important; }
+section[data-testid="stSidebar"] * { color:var(--ink); }
+.ts-kicker { color:var(--accent); font-size:.72rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+.ts-title { color:var(--ink) !important; font-size:2.15rem; font-weight:750; line-height:1.12; letter-spacing:-.045em; margin:.35rem 0 .55rem; }
+.ts-sub { color:var(--muted) !important; font-size:1rem; max-width:760px; line-height:1.6; }
+.ts-panel { border:1px solid var(--line); border-radius:14px; background:#fff; padding:16px 18px; }
+.ts-chip { display:inline-block; border:1px solid var(--line); background:#fff; border-radius:999px; padding:5px 10px; font-size:.78rem; color:#34584f; }
+div[data-testid="stChatMessage"] { border:1px solid var(--line) !important; border-radius:14px !important; background:#fff !important; padding:1rem 1.15rem !important; box-shadow:0 2px 8px rgba(21,45,38,.035); }
+div[data-testid="stChatMessage"] p, div[data-testid="stChatMessage"] li { color:var(--ink) !important; line-height:1.65 !important; }
+.stButton button { border-radius:10px !important; border:1px solid #d5e2db !important; min-height:2.65rem; color:#214b40 !important; background:#fff !important; font-weight:600 !important; }
+.stButton button:hover { border-color:var(--accent) !important; background:var(--accent-soft) !important; }
+button[kind="primary"], [data-testid="stFormSubmitButton"] button { background:var(--accent) !important; color:#fff !important; border-color:var(--accent) !important; }
+[data-testid="stChatInput"] { background:#fff !important; border:1px solid #cddbd3 !important; border-radius:14px !important; }
+[data-testid="stChatInput"] textarea { color:var(--ink) !important; }
+[data-testid="stExpander"] { border:1px solid var(--line) !important; border-radius:12px !important; background:#fff !important; }
+[data-testid="stCaptionContainer"] { color:var(--muted) !important; }
+hr { border-color:var(--line) !important; }
 </style>
 """, unsafe_allow_html=True)
 
