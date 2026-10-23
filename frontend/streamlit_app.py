@@ -74,39 +74,49 @@ with st.expander("Add a policy document", expanded=False):
     st.caption("Upload a document to the running API. New text becomes searchable after successful indexing. Uploaded synthetic policies must be clearly labelled; indexing does not automatically activate calculation rules.")
     with st.form("document_ingestion_form", clear_on_submit=False):
         uploaded = st.file_uploader("Policy file (PDF, DOCX, Markdown or TXT)", type=["pdf", "docx", "md", "txt"], key="policy_upload")
+        st.markdown("**Optional document details**")
+        st.caption("Only choose a file to get started. Leave details blank if you do not know them; sensible defaults will be generated. Examples are shown under each field.")
         c1, c2 = st.columns(2)
         with c1:
-            doc_id = st.text_input("Document ID", placeholder="DTU-NEW-CIRC-2026")
-            title = st.text_input("Document title", placeholder="Official circular title")
-            issuer = st.text_input("Issuing authority", placeholder="Office / department")
-            authority_level = st.selectbox("Authority level", [1, 2, 3, 4, 5], index=2, help="1 highest authority; 5 unofficial")
+            doc_id = st.text_input("Document ID (optional)", placeholder="Example: DTU-EXAM-2026-001", help="A short unique label. Leave blank to generate one from the filename.")
+            title = st.text_input("Document title (optional)", placeholder="Example: Examination Eligibility Notice", help="The document's heading or a descriptive title. Leave blank to use the filename.")
+            issuer = st.text_input("Issuing authority (optional)", placeholder="Example: DTU Examination Branch", help="Who published it, if known. Leave blank to mark the issuer as not provided.")
+            authority_level = st.selectbox("Authority level", [1, 2, 3, 4, 5], index=2, help="1 = highest authority, 5 = unofficial/lowest. If unsure, keep the default and verify later.")
             doc_type = st.selectbox("Document type", ["regulation", "circular", "notice", "faq", "handbook", "unofficial"])
-            version = st.text_input("Version", placeholder="e.g. 2026-10")
+            version = st.text_input("Version (optional)", placeholder="Example: 2026-08-24 or v2", help="Use the date/version printed on the document. Leave blank to use upload date.")
         with c2:
-            effective_from = st.text_input("Effective from (YYYY-MM-DD; leave blank if not stated)", value="")
-            effective_to = st.text_input("Effective to (YYYY-MM-DD or blank)", value="")
-            scope_programmes = st.text_input("Programme scope", value="ALL", help="ALL or semicolon-separated names")
-            scope_batches = st.text_input("Batch scope", value="ALL", help="ALL, year, list (semicolon-separated), range or 2023+")
-            supersedes = st.text_input("Supersedes document/clause", help="e.g. OLD-DOC#7.2; leave blank if none")
-            provenance = st.text_input("Source URL or provenance", placeholder="Official URL or clearly described source")
-            synthetic = st.selectbox("Source status", ["N", "Y"], format_func=lambda x: "Official / non-synthetic" if x == "N" else "Synthetic demo")
+            effective_from = st.text_input("Effective from (optional)", placeholder="Example: 2026-08-24", help="YYYY-MM-DD. Leave blank if the document does not state this.")
+            effective_to = st.text_input("Effective to (optional)", placeholder="Example: 2027-06-30", help="YYYY-MM-DD. Leave blank if no expiry is stated.")
+            scope_programmes = st.text_input("Programme scope", value="ALL", help="Example: ALL or BTech; MTech. Keep ALL if unsure.")
+            scope_batches = st.text_input("Batch scope", value="ALL", help="Example: ALL, 2024, 2023+ or 2022;2023. Keep ALL if unsure.")
+            supersedes = st.text_input("Supersedes document/clause (optional)", placeholder="Example: DTU-OLD-REG-2024#7.2", help="Fill only when this document explicitly replaces an older rule.")
+            provenance = st.text_input("Source URL or provenance (optional)", placeholder="Example: DTU website URL or 'PDF provided by user'", help="Where it came from. Leave blank to record that it was user-uploaded.")
+            synthetic = st.selectbox("Source status", ["N", "Y"], format_func=lambda x: "Official / non-synthetic" if x == "N" else "Synthetic demo", help="Choose Synthetic demo for invented/test documents. Do not label an unverified upload as officially verified.")
         upload_submitted = st.form_submit_button("Validate and index document", type="primary", use_container_width=True)
     if upload_submitted:
         if uploaded is None:
             st.error("Choose a file before submitting.")
-        elif not all([doc_id.strip(), title.strip(), issuer.strip(), version.strip(), provenance.strip()]):
-            st.error("Document ID, title, issuer, version and provenance are required.")
         else:
-            title_value = title.strip()
+            from pathlib import Path
+            import re
+            today = date.today().isoformat()
+            filename_stem = Path(uploaded.name).stem
+            safe_stem = re.sub(r"[^A-Za-z0-9]+", "-", filename_stem).strip("-").upper()[:48] or "UPLOADED-DOCUMENT"
+            resolved_doc_id = doc_id.strip() or f"UPLOAD-{safe_stem}-{today.replace('-', '')}"
+            resolved_title = title.strip() or filename_stem.replace("_", " ").replace("-", " ").strip() or uploaded.name
+            resolved_issuer = issuer.strip() or "Not provided in upload metadata"
+            resolved_version = version.strip() or f"uploaded-{today}"
+            resolved_provenance = provenance.strip() or f"User-uploaded file: {uploaded.name}"
+            title_value = resolved_title
             if synthetic == "Y" and "SYNTHETIC DEMO" not in title_value.upper():
                 title_value = "SYNTHETIC DEMO — " + title_value
             metadata = {
-                "doc_id": doc_id.strip(), "title": title_value, "issuer": issuer.strip(),
-                "authority_level": int(authority_level), "doc_type": doc_type, "version": version.strip(),
+                "doc_id": resolved_doc_id, "title": title_value, "issuer": resolved_issuer,
+                "authority_level": int(authority_level), "doc_type": doc_type, "version": resolved_version,
                 "effective_from": effective_from.strip(), "effective_to": effective_to.strip(),
                 "supersedes": supersedes.strip(), "scope_programmes": scope_programmes.strip() or "ALL",
-                "scope_batches": scope_batches.strip() or "ALL", "provenance": provenance.strip(),
-                "retrieved_on": __import__("datetime").date.today().isoformat(), "synthetic": synthetic,
+                "scope_batches": scope_batches.strip() or "ALL", "provenance": resolved_provenance,
+                "retrieved_on": today, "synthetic": synthetic,
             }
             try:
                 upload_headers = {"X-Student-Id": st.session_state.student_id} if st.session_state.student_id else {}
