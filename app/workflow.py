@@ -398,7 +398,7 @@ def _evidence_is_relevant(question: str, passages: list[dict[str, Any]]) -> bool
         "supplementary": {"supplementary", "reappear", "back paper"},
         "grading": {"grade", "grading", "marks", "cgpa", "sgpa", "result"},
     }
-    passage_text = "\\n".join(str(p.get("text", "")) for p in passages).casefold()
+    passage_text = "\n".join(str(p.get("text", "")) for p in passages).casefold()
     passage_text = re.sub(r"[^a-z0-9%]+", " ", passage_text)
     for topic, aliases in topic_groups.items():
         if topic in q or any(alias in q for alias in aliases):
