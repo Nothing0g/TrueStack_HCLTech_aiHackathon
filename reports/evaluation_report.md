@@ -9,7 +9,7 @@
 - **Evaluation set:** 29 unique cases; required categories and independent tool-value oracles are present (`python scripts/evaluate.py --check-only`).
 - **Independent tool oracle:** PASS for 7 tool-oriented cases, computed independently from raw CSV values (`python scripts/evaluation_oracle.py`).
 - **Synthetic data validator:** PASS — 30 fictional students, 6 courses, 90 attendance rows and 90 result rows; 2 programmes and 2 admission batches; no schema/logical violations reported (`python scripts/validate_students.py --dir data/test_students/`).
-- **Automated unit/API tests:** 32 passed (`python -m pytest -q`). Two FastAPI deprecation warnings remain for the legacy `on_event` startup hook; they did not fail tests.
+- **Automated unit/API tests:** The prior recorded baseline was 32 passed (`python -m pytest -q`) before the recent general-Qwen routing change. Five new routing/relevance regression tests have since been added but have not been executed in this environment. Treat the latest test status as pending until rerun.
 - **API module import:** PASS (`import app.main`).
 
 ## Not verified here
@@ -17,6 +17,7 @@
 - Full live API evaluation against persistent ChromaDB and Sentence Transformers.
 - Streamlit UI running in the target environment.
 - Actual Qwen inference through Ollama, including the general-knowledge route.
+- Execution of the five newly added routing/relevance regression tests.
 - Live `/ingest` retrieval end-to-end against a running vector store.
 - Manual verification that every generated citation supports the claim on the cited original PDF page.
 - Latency p50/p95 and real-model token counts.
