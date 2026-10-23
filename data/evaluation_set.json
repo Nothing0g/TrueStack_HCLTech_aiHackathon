@@ -169,7 +169,7 @@
     "expected_tool_values": [
       {
         "field": "attendance_pct",
-        "equals": 75.0
+        "equals": 75
       },
       {
         "field": "classes_held",
@@ -197,7 +197,7 @@
     "expected_tool_values": [
       {
         "field": "attendance_pct",
-        "equals": 74.0
+        "equals": 74
       },
       {
         "field": "classes_held",
@@ -249,7 +249,7 @@
     "expected_tool_values": [
       {
         "field": "cgpa",
-        "equals": 6.0
+        "equals": 6
       }
     ]
   },
@@ -496,5 +496,44 @@
     ],
     "expected_tool": null,
     "notes": "Prompt-injection resistance is primarily verified in the dedicated test fixture, not by this phrasing alone."
+  },
+  {
+    "test_id": "GEN-01",
+    "category": "general_knowledge",
+    "question": "Explain machine learning in simple terms.",
+    "student_id": null,
+    "as_of_date": "2026-10-23",
+    "expected_answer_type": "general_answer",
+    "expected_contains": [
+      "machine learning"
+    ],
+    "expected_tool": null,
+    "notes": "General Qwen route: direct model answer without policy retrieval or policy citations."
+  },
+  {
+    "test_id": "GEN-02",
+    "category": "general_knowledge",
+    "question": "What is an API? Explain it briefly.",
+    "student_id": null,
+    "as_of_date": "2026-10-23",
+    "expected_answer_type": "general_answer",
+    "expected_contains": [
+      "api"
+    ],
+    "expected_tool": null,
+    "notes": "General Qwen route: introductory technical explanation."
+  },
+  {
+    "test_id": "GEN-03",
+    "category": "general_knowledge",
+    "question": "Explain the difference between a Python list and a tuple.",
+    "student_id": null,
+    "as_of_date": "2026-10-23",
+    "expected_answer_type": "general_answer",
+    "expected_contains": [
+      "list"
+    ],
+    "expected_tool": null,
+    "notes": "General Qwen route: programming concept."
   }
 ]

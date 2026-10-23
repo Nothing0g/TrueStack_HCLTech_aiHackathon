@@ -7,7 +7,8 @@ Local-first RAG + deterministic tools + one LangGraph workflow.
 
 ## What it does
 
-- Answers policy questions from indexed university documents with source/page/version/effective-date citations.
+- Answers ordinary general-knowledge and programming questions directly with local Qwen.
+- Answers university-policy questions from indexed documents with source/page/version/effective-date citations.
 - Uses Sentence Transformers and persistent ChromaDB for retrieval.
 - Uses SQLite and deterministic Python tools for student records, attendance, results and source-linked rules.
 - Applies document applicability and precedence (scope, effective dates, explicit supersession, authority and recency).
@@ -15,7 +16,7 @@ Local-first RAG + deterministic tools + one LangGraph workflow.
 - Supports missing-evidence responses, clarification, unresolved-conflict reporting and multi-step what-if questions.
 - Accepts documents through `POST /ingest` while running, without re-embedding the whole corpus on startup.
 - Keeps indexing and calculation-rule activation separate: a new number in a PDF cannot automatically become an active eligibility threshold.
-- Uses a local Qwen model through Ollama when `MOCK_LLM=false`; mock mode is provided for pipeline testing.
+- Uses a local Qwen model through Ollama for general answers and evidence-grounded policy explanations when `MOCK_LLM=false`; mock mode is only for pipeline smoke tests.
 
 ## Architecture
 
@@ -79,7 +80,7 @@ A GPU is not required. Actual speed depends on hardware; no latency guarantee is
    - API docs: <http://localhost:8000/docs>
    - Health: <http://localhost:8000/health>
 
-The first build downloads Python packages and the embedding model unless they are cached, so it needs network access. Ollama runs on the host by default; Compose uses `host.docker.internal`. Check `.env.example` and `docker-compose.yml` if your system uses different host networking.
+General questions are classified to Qwen directly and do not run policy retrieval. University-policy questions remain on the RAG route and must be supported by indexed authorised evidence. Personal records and eligibility use deterministic SQLite/Python tools. The first build downloads Python packages and the embedding model unless they are cached, so it needs network access. Ollama runs on the host by default; Compose uses `host.docker.internal`. Check `.env.example` and `docker-compose.yml` if your system uses different host networking.
 
 Stop using `Ctrl+C`. Persisted SQLite and ChromaDB files stay under `storage/`; uploaded documents stay under `data/documents/`.
 

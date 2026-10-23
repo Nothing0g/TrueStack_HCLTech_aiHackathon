@@ -87,8 +87,23 @@ def classify(question: str) -> tuple[str, str | None]:
         return "personal_result", course
     if q.strip().rstrip("?.! ") in {"am i eligible", "am i eligible for"}:
         return "ambiguous", course
-    return "policy", course
 
+    # Route institution-specific policy claims to RAG. Generic definitions and
+    # ordinary knowledge questions use Qwen directly, even if they mention a broad topic.
+    policy_indicators = (
+        "dtu", "delhi technological university", "policy", "policies", "ordinance",
+        "regulation", "circular", "eligibility", "admission criteria", "admission process",
+        "minimum attendance", "attendance requirement", "exam eligibility",
+        "examination eligibility", "placement cutoff", "placement cut-off",
+        "placement eligibility", "scholarship policy", "fee policy", "hostel policy",
+        "supplementary exam", "supplementary examination", "reappear", "back paper",
+        "course registration", "cgpa cutoff", "cgpa cut-off", "student record",
+        "academic rule", "at my university", "our university", "university's", "university’s",
+        "in university policy",
+    )
+    if any(term in q for term in policy_indicators):
+        return "policy", course
+    return "general_knowledge", course
 
 def citation_from(passage: dict[str, Any]) -> dict[str, Any]:
     m = passage.get("metadata", {})
@@ -483,7 +498,7 @@ def _validate(state: WorkflowState) -> WorkflowState:
         return state
     if response.get("answer_type") in {"retrieved_fact", "calculated"} and not response.get("citations") and state.get("category") not in {"personal_attendance", "personal_profile", "personal_result"}:
         return _set_response(state, NOT_FOUND, "not_found", error="citation_validation_failed")
-    valid_types = {"retrieved_fact", "calculated", "not_found", "clarification_needed", "refused", "conflict_flagged"}
+    valid_types = {"retrieved_fact", "calculated", "general_answer", "not_found", "clarification_needed", "refused", "conflict_flagged"}
     if response.get("answer_type") not in valid_types:
         return _set_response(state, NOT_FOUND, "not_found", error="invalid_answer_type")
     return state
@@ -514,6 +529,20 @@ def _process_after_authorize(state: WorkflowState) -> WorkflowState:
         return state
     if state["category"] == "ambiguous":
         return _clarify(state)
+    if state["category"] == "general_knowledge":
+        # General questions may use pretrained Qwen knowledge, but never claim the answer is official policy.
+        try:
+            answer, model, tokens = explain(state["question"], "", "general_answer")
+        except LLMUnavailable as exc:
+            state["response"] = {"_http_status": 503, "detail": str(exc)}
+            state["error_category"] = "llm_unavailable"
+            return state
+        state["model"] = model
+        state["tokens"] = tokens
+        state["llm_calls"] += 0 if MOCK_LLM else 1
+        if not answer.strip():
+            answer = "I could not generate a response. Please try again."
+        return _set_response(state, answer, "general_answer", explanation=answer)
     if state["category"] == "policy":
         state = _retrieve(state)
         if not state.get("response", {}).get("_http_status"):

@@ -46,3 +46,35 @@ def test_attendance_question_accepts_attendance_notice():
         "metadata": {"title": "Examination Eligibility"},
     }
     assert workflow._evidence_is_relevant("What is the attendance requirement for exams?", [passage])
+
+
+
+def test_general_question_uses_qwen_route_without_rag(isolated_db, monkeypatch):
+    def fail_search(*args, **kwargs):
+        raise AssertionError("general questions should not invoke university policy retrieval")
+
+    monkeypatch.setattr(workflow, "search", fail_search)
+    def fake_explain(question, evidence, answer_type, mock_template=None):
+        assert answer_type == "general_answer"
+        return ("Machine learning is a way for computers to learn patterns from examples.", "qwen2.5:7b", 24)
+
+    monkeypatch.setattr(workflow, "explain", fake_explain)
+    response = workflow.run_workflow("Explain machine learning in simple terms.", None, "2026-10-23")
+    assert response["answer_type"] == "general_answer"
+    assert "learn patterns" in response["answer"]
+
+
+def test_university_policy_question_stays_on_grounded_route():
+    category, _ = workflow.classify("What are the admission criteria for DTU?")
+    assert category == "policy"
+
+
+def test_general_chat_is_not_mislabeled_as_policy():
+    category, _ = workflow.classify("What is an API? Explain it simply.")
+    assert category == "general_knowledge"
+
+
+
+def test_broad_definition_routes_to_general_qwen():
+    category, _ = workflow.classify("What is a scholarship?")
+    assert category == "general_knowledge"
