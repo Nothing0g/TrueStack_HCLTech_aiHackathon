@@ -6,7 +6,7 @@
 
 ## Verified locally in the available environment
 
-- **Evaluation set:** 26 unique cases; required categories and independent tool-value oracles are present (`python scripts/evaluate.py --check-only`).
+- **Evaluation set:** 29 unique cases; required categories and independent tool-value oracles are present (`python scripts/evaluate.py --check-only`).
 - **Independent tool oracle:** PASS for 7 tool-oriented cases, computed independently from raw CSV values (`python scripts/evaluation_oracle.py`).
 - **Synthetic data validator:** PASS — 30 fictional students, 6 courses, 90 attendance rows and 90 result rows; 2 programmes and 2 admission batches; no schema/logical violations reported (`python scripts/validate_students.py --dir data/test_students/`).
 - **Automated unit/API tests:** 32 passed (`python -m pytest -q`). Two FastAPI deprecation warnings remain for the legacy `on_event` startup hook; they did not fail tests.
@@ -16,7 +16,7 @@
 
 - Full live API evaluation against persistent ChromaDB and Sentence Transformers.
 - Streamlit UI running in the target environment.
-- Actual Qwen inference through Ollama.
+- Actual Qwen inference through Ollama, including the general-knowledge route.
 - Live `/ingest` retrieval end-to-end against a running vector store.
 - Manual verification that every generated citation supports the claim on the cited original PDF page.
 - Latency p50/p95 and real-model token counts.
