@@ -1,6 +1,6 @@
 # DTU Source Coverage Matrix
 
-**Corpus status:** Three official DTU sources supplied by the project owner have been extracted into page-anchored text sidecars. The 143-page B.Tech Ordinance is an OCR extract and may contain OCR errors; check the cited page of the original PDF before relying on a clause for a real academic decision. The one-page 2026–27 examination notice is also OCR-derived. The seven-page placement policy is text-extracted.
+**Corpus status:** The full local bundle includes the three supplied official DTU PDFs and the complete OCR-derived text sidecar for the 143-page B.Tech Ordinance. The public Git repository omits the large original PDFs and includes a focused ordinance excerpt for the cited demo clauses, alongside page-anchored text for the one-page 2026–27 examination notice and seven-page placement policy. OCR can contain errors; verify cited clauses visually in the original PDF before relying on them for real academic decisions.
 
 | Topic | Actual coverage in the supplied official corpus | Source and location | Application behaviour |
 |---|---|---|---|
