@@ -41,7 +41,7 @@ if "student_id" not in st.session_state: st.session_state.student_id = "S1001"
 with st.sidebar:
     st.markdown('<div class="ts-kicker">TRUESTACK · HACKATHON DEMO</div>', unsafe_allow_html=True)
     st.markdown("### Student services")
-    st.caption("A local-first, evidence-grounded university assistant.")
+    st.caption("A local-first assistant for general questions, sourced university policies, and demo student records.")
     st.divider()
     try:
         health = requests.get(f"{API}/health", timeout=3).json()
@@ -67,7 +67,7 @@ with st.sidebar:
 
 st.markdown('<div class="ts-kicker">University knowledge, clearly sourced</div>', unsafe_allow_html=True)
 st.markdown('<div class="ts-title">Your student services, in one place.</div>', unsafe_allow_html=True)
-st.markdown('<div class="ts-sub">Ask about policies, procedures, and your synthetic student records. Answers cite the sources used; calculations come from deterministic Python tools.</div>', unsafe_allow_html=True)
+st.markdown('<div class="ts-sub">Ask general questions, ask about university policies and procedures, or check synthetic student records. Policy answers cite retrieved sources; calculations come from deterministic Python tools.</div>', unsafe_allow_html=True)
 st.write("")
 
 with st.expander("Add a policy document", expanded=False):
@@ -135,6 +135,8 @@ cols = st.columns(4)
 for i, q in enumerate(sample_questions):
     if cols[i].button(q, key=f"sample_{i}", use_container_width=True, help="Submits this question to the live backend"):
         st.session_state.pending_question = q
+if st.button("Try general Q&A · Explain machine learning in simple terms", key="sample_general", use_container_width=True, help="Uses Qwen directly without policy retrieval"):
+    st.session_state.pending_question = "Explain machine learning in simple terms."
 
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
@@ -148,7 +150,7 @@ for msg in st.session_state.messages:
             with st.expander("Trace and verification details"):
                 st.json({k: resp.get(k) for k in ["trace_id", "answer_type", "tools_invoked", "applied_rules", "conflicts_detected", "as_of_date"]})
 
-question = st.chat_input("Ask a question about university policies or your records…")
+question = st.chat_input("Ask a general question, university policy question, or student-record question…")
 if not question and st.session_state.get("pending_question"):
     question = st.session_state.pop("pending_question")
 
