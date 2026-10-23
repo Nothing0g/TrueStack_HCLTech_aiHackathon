@@ -46,7 +46,7 @@ The local bundle includes the original three PDFs under `data/documents/official
 
 The Ordinance and examination notice are scans; their text sidecars were OCR-processed. OCR can contain errors, so check a cited page in the supplied PDF before treating a clause as authoritative in real academic decisions. The placement policy says company-specific CGPA cutoffs are set by companies; it does not define a universal cutoff for all students.
 
-For a Git clone, large original PDFs are not stored in Git history; the extracted page-anchored text sidecars and source register are included. The downloadable local project bundle retains the supplied original PDFs. If the PDFs are absent in another checkout, the official text sidecars remain available for the bundled source corpus, and additional documents can be uploaded through the app.
+For a Git clone, large original PDFs are not stored in Git history. Page-anchored extracted text sidecars are included for the examination notice and placement policy; the public repository contains a focused OCR-derived excerpt of the 143-page ordinance covering the clauses used by the demo. The separate downloadable local bundle retains all three original PDFs and the complete OCR text sidecar. If you clone only the Git repository and need broader ordinance coverage, place the original PDF or a text-readable extract in the local project and ingest it through the app.
 
 ## Requirements
 
