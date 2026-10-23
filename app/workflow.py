@@ -383,19 +383,35 @@ def _resolve(state: WorkflowState) -> WorkflowState:
 
 
 def _evidence_is_relevant(question: str, passages: list[dict[str, Any]]) -> bool:
+    """Reject semantically adjacent but wrong policy documents before generation."""
     if not passages:
         return False
-    terms = {_normalise(t) for t in re.findall(r"[a-zA-Z]{3,}", question) if t.casefold() not in STOPWORDS}
+    q = question.casefold()
+    topic_groups = {
+        "admission": {"admission", "admissions", "admit", "entrance", "jee", "counselling", "counseling"},
+        "attendance": {"attendance", "attend", "classes attended", "classes held"},
+        "placement": {"placement", "recruitment", "company", "cgpa cutoff", "backlog"},
+        "scholarship": {"scholarship", "financial aid", "stipend", "fee waiver"},
+        "hostel": {"hostel", "residence", "mess", "accommodation"},
+        "fee": {"fee", "fees", "tuition", "refund", "payment"},
+        "examination": {"examination", "exam", "exams", "assessment", "end-semester", "end semester"},
+        "supplementary": {"supplementary", "reappear", "back paper"},
+        "grading": {"grade", "grading", "marks", "cgpa", "sgpa", "result"},
+    }
+    passage_text = "\\n".join(str(p.get("text", "")) for p in passages).casefold()
+    passage_text = re.sub(r"[^a-z0-9%]+", " ", passage_text)
+    for topic, aliases in topic_groups.items():
+        if topic in q or any(alias in q for alias in aliases):
+            if not any(re.sub(r"[^a-z0-9%]+", " ", alias).strip() in passage_text for alias in aliases):
+                return False
+    generic = STOPWORDS | {"dtu", "university", "college", "criteria", "criterion", "information", "policy", "policies"}
+    terms = {_normalise(t) for t in re.findall(r"[a-zA-Z]{3,}", q) if t.casefold() not in generic}
     if not terms:
         return True
-    for p in passages:
-        words = {_normalise(t) for t in re.findall(r"[a-zA-Z]{3,}", p.get("text", ""))}
-        if terms & words:
-            return True
-    # For explicitly requested policy concepts, semantic retrieval is accepted if it ranks a source; this guard only rejects
-    # wholly unrelated results when the question terms do not overlap any retrieved passage.
-    return False
-
+    passage_terms = {_normalise(t) for t in re.findall(r"[a-zA-Z]{3,}", passage_text)}
+    overlap = terms & passage_terms
+    required = 1 if len(terms) <= 2 else 2
+    return len(overlap) >= required and len(overlap) / max(1, len(terms)) >= 0.2
 
 def _normalise(term: str) -> str:
     aliases = {"exams": "examination", "exam": "examination", "examinations": "examination", "eligibility": "eligible", "requirements": "requirement", "required": "requirement", "backlogs": "backlog", "marks": "mark", "placements": "placement"}
@@ -441,7 +457,7 @@ def _synthesize(state: WorkflowState) -> WorkflowState:
         state["model"] = model; state["tokens"] = tokens; state["llm_calls"] += 0 if MOCK_LLM else 1
         return _set_response(state, answer, "calculated", citations=citations, explanation=answer if MOCK_LLM else explanation)
     excerpt = _passage_excerpt(selected)
-    evidence = "\n\n".join(p.get("text", "") for p in selected)
+    evidence = "\\n\\n".join(p.get("text", "") for p in selected)
     try:
         explanation, model, tokens = explain(state["question"], evidence, "retrieved_fact", mock_template=excerpt)
     except LLMUnavailable as exc:
@@ -449,8 +465,11 @@ def _synthesize(state: WorkflowState) -> WorkflowState:
         state["error_category"] = "llm_unavailable"
         return state
     state["model"] = model; state["tokens"] = tokens; state["llm_calls"] += 0 if MOCK_LLM else 1
-    # The quoted passage stays the primary answer; model-generated language is explanatory only.
-    return _set_response(state, excerpt, "retrieved_fact", citations=citations, explanation=excerpt if MOCK_LLM else explanation)
+    # Real inference should return the grounded plain-language synthesis, not the raw source chunk.
+    answer = explanation.strip() if not MOCK_LLM and explanation.strip() else excerpt
+    if not answer or answer == NOT_FOUND:
+        return _set_response(state, NOT_FOUND, "not_found", error="empty_grounded_answer")
+    return _set_response(state, answer, "retrieved_fact", citations=citations, explanation=answer)
 
 
 def json_safe_text(value: Any) -> str:
