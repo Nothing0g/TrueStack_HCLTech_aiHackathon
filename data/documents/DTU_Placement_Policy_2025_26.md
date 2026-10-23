@@ -1,0 +1,448 @@
+# DTU Placement Policy 2025–26
+
+Official source PDF: data/original_pdfs/DTU_Placement_Policy_2025_26.pdf
+Provenance URL: https://tnp.dtu.ac.in/docs/policy.pdf
+The policy explicitly concerns the 2025–26 passing-out batch. The text is extracted from the supplied PDF with page markers; verify against the original where layout matters.
+
+[PAGE 1]
+
+1e
+                                                                                                     34
+
+                DEPARTMENT OF TRAINING AND PLACEMENT
+                      DELHI TECHNOLOGICAL UNIVERSITY
+*DE
+     DELTECH                (Formerly Delhi College of Engineering)
+                                     Govt. of NCT of Delhi
+                         Shahbad Daulatpur, Bawana Road, Delhi 110042
+               Tel: +91-11-27871421, www.dtu.ac.in, Email: placements@dtu.ac.in
+
+
+F.NO./DTU/T&P/563/2024-25/338                                                   Date 3/07/2025
+
+
+
+                                Placement Policy 2025-26
+
+
+Subject: Approval of Placement Policy/SOP/Rules for 2025-26 passing out batch.
+
+1.    Unplaced Students:
+
+      Students who have not received any job offer may apply to any visiting company, provided
+      they meet the company's eligibility criteria.
+
+
+2.    Second Job Eligibility:
+
+      A student placed with a package of 'X' LPA CTC may apply for a second placement only
+      with companies offering at least '1.5X' LPA CTC (or as decided by the T&P department).
+
+      This is permitted only after 80% of the batch is placed.
+
+      Students placed in 'Exclusive' companies or PSUs are not allowed for a second job.
+
+      The 'Exclusive' status is determined by the T&P department based on factors such as brand
+      value, CTC, and number of offers.
+
+      The '1.5X' and '80%' rules may be relaxed only in exceptional cases, as decided by the T&P
+      department.
+
+Pre-Placement Offers (PPO)
+
+3.    Reporting PPOs:
+
+If a student receives a PPO, he/she must report it to the T&P department within 24 hours of
+      receipt via email at placements@dtu.ac.in.
+
+4.    Acceptance of PPOs:
+
+      Acceptance of a PPO deems the student as placed and hence not allowed for further on-
+      campus opportunities.
+
+      If a PPO is offered by the company, the student must accept the offer.
+
+      In exceptional cases, with valid justification and approval from the Head (T&P), a student
+      may decline a PPO and apply for further placement opportunities.
+
+
+      In such cases, a written undertaking is required stating that the student will only apply to
+      companies offering a CTC of at least 1.5X (or as per the HOD's direction) of the PРО СТС.
+
+[PAGE 2]
+
+33k
+                      DEPARTMENT OF TRAINING AND PLACEMENT
+                             DELHI TECHNOLOGICAL UNIVERSITY
+           DELTECH                  (Formerly Delhi College of Engineering)
+                                              Govt. of NCT of Delhi
+                               Shahbad Daulatpur, Bawana Road, Delhi 110042
+                     Tel: +91-11-27871421, www.dtu.ac.in, Email: placements@dtu.ac.in
+
+
+      Number of Offers
+
+      5.    Maximum Offers:
+
+
+            Generally, a student can hold only one offer. However, in exceptional cases, a student may
+            hold a maximum of two offers (including PPOs and on-campus offers). For example, one
+            on-campus offer and one PPO/PSU offer count as two offers.
+
+
+      6.    Offer Selection:
+
+
+            If a student receives two offers, he/she must select one and notify the T&P department in
+            writing within 24 hours. Failure to do so may result in the cancellation of both offers.
+
+      Off-Campus Offers
+
+      7.    Eligibility after Off-Campus Offer:
+            If a student receives an off-campus offer and reports it to the T&P department within three
+            days via email at placements@dtu.ac.in, he/she will be allowed for on-campus placement
+            opportunities, similar to unplaced students.
+
+            Off-campus offers must be reported to            the T&P department via email
+            at placements@dtu.ac.in. Non-compliance may lead to disciplinary action, and the T&P
+            department will not issue any NOC or other documents required by the recruiter.
+
+      Internships
+
+      8.    2-Month Summer Internship:
+
+            It is mandatory for students to complete a 2-month summer internship after the completion
+            of 6th semester. Registration on the official Resume Manager is mandatory for all students
+            after the fourth    semester; students    are   also   expected to actively pursue internship
+            opportunities.
+
+            A student having no internship offer will be allowed as per eligibility criteria set by recruiter.
+
+            A student receiving an on-campus summer           internship offer must accept it and join the
+            concerned company for the internship.
+
+            If a student fails to join, he/she shall be considered as placed with a notional CTC (as offered
+            at PPO) by the company offering the internship. The student will then be allowed for on-
+            campus placement only with companies offering at least 1.5X the notional CTC.           However,
+            the requirement of 80% of students being placed will be relaxed.
+
+            The above rule may be exempted if the CTC (PPO) offered is less than ₹8 LPА.
+
+[PAGE 3]
+
+1c
+                                                                                                      32
+                    DEPARTMENT OF TRAINING AND PLACEMENT
+                       DELHI TECHNOLOGICAL UNIVERSITY
+     DEL ECH                   (Formerly Delhi College of Engineering)
+                                         Govt. of NCT of Delhi
+     EANOLOGICAL
+                             Shahbad Daulatpur, Bawana Road, Delhi 110042
+                   Tel: +91-11-27871421, www.dtu.ac.in, Email: placements@dtu.ac.in
+
+
+9.    6-Month Internships Without FTE (for Final year B.Tech Students Only):
+
+      Unplaced students who have completed their credits (by the seventh semester) are allowed
+      for a 6-month internship (January-June) subjected to NOC from their project supervisor and
+      HoD.
+
+      Students are required to submit an undertaking regarding completion of credits by seven
+      semesters duly forwarded by project supervisor.
+
+      Students are required to submit NOC from project supervisor and HoD before joining the
+      internship to the T&P Department.
+      They must complete      their project work and report to the department for progress
+      presentations or other academic activities as required.
+
+      Students selected for such internships will be considered as placed with a notional CТС
+      (PPO) equal to that offered by the company.
+이
+      These students will not be allowed to participate in the placement season, subject to the
+      criteria mentioned under point 2.
+
+
+      Students are advised to choose such internships wisely, preferably with companies that have
+      a good reputation.
+
+      It is recommended that companies collaborate      on   Final year projects with the student's
+       project supervisor so that project work aligns with company requirements and benefits all
+       stakeholders.
+
+10. 11-Month Internships Without FTE (For Final Year M. Tech/M.Tech By Reasearch
+    Students Only):
+
+       Unplaced students who have completed their all credits expect project work are allowed for
+       an 11-month  internship (August-June). Only those students will be allowed who submit
+       NOC from their project supervisor and HoD.
+
+       After selection, candidates are required to submit a No Objection Certificate (NOC) along
+       with an undertaking affirming the satisfactory progress of their project work and their
+       willingness to forgo the GATE/University scholarship.
+
+      They must complete their project work and report to the department for progress
+      presentations or other academic activities as required.
+
+       Students must obtain consent from their guide or HoD to participate in such opportunities.
+
+       A detailed report of the project work must be submitted to the supervisor before leaving for
+      the internship.
+
+       Students selected for such internships will be considered as placed with a notional CTC
+       (PPO) equal to that offered by the company.
+
+[PAGE 4]
+
+31/e
+                     DEPARTMENT OF TRAINING AND PLACEMENT
+                            DELHI TECHNOLOGICAL UNIVERSITY
+         DEL TECH                  (Formerly Delhi College of Engineering)
+                                             Govt. of NCT of Delhi
+                                Shahbad Daulatpur, Bawana Road, Delhi 110042
+                    Tel: +91-11-27871421, www.dtu.ac.in, Email: placements@dtu.ac.in
+
+
+           These students will not be allowed to participate in the placement season, subject to the
+           criteria mentioned under point 2.
+
+           Students are advised to choose such internships wisely, preferably with companies that have
+           a good market reputation.
+
+
+
+           It is recommended that companies collaborate on Final year projects with the student's
+           project supervisor so that project work aligns with company requirements and benefits all
+           stakeholders.
+
+       11. Internships without Pre-Placement-Offer (PPO) offers are not permitted. However, in
+           exceptional circumstances it may be considered by the Head, T&P.
+
+       12. Only companies offering a Pre-Placement Offer (PPO) with a duration of six months or more
+           will be permitted, provided    they have a strong reputation and a high conversion rate.
+           Furthermore, students are advised to pursue internships solely with companies that add
+           significant value to their profiles and are recognized by leading organizations within the
+           respective sector.
+
+       13. Students enrolled in the M.Tech by Research program are permitted to participate in all
+           opportunities as M.Tech programs.
+
+       Company Shortlisting
+
+       14. Resume Shortlisting:
+
+
+           Companies independently shortlist students based on their criteria. No inquiries regarding
+           shortlisting will be entertained. However, recruiters are expected to conduct fair shortlisting.
+
+
+       15. CGPA Cutoff:
+
+
+           The CGPA cutoff is set according to company directives. No requests to lower the cutoff will
+           be considered. The company's decision is final, and the T&P placement team has no role in
+           setting the CGPA criteria.
+
+       Resume and Data Verification
+
+       16. Resume Verification:
+
+
+           Data provided on Recruitment Manager will be cross-verified. Any false information will
+           result in debarment from the entire placement process and further disciplinary action.
+
+
+
+       17. Resume Database Access:
+
+
+           Only authorized person from T&P can modify the Recruitment Manager database.
+
+[PAGE 5]
+
+10
+                                                                                                          39
+
+                  DEPARTMENT OF TRAINING AND PLACEMENT
+                     DELHI TECHNOLOGICAL UNIVERSITY
+     DELTECH                   (Formerly Delhi College of Engineering)
+                                         Govt. of NCT of Delhi
+                           Shahbad Daulatpur, Bawana Road, Delhi 110042
+                 Tel: +91-11-27871421, www.dtu.ac.in, Email: placements@dtu.ac.in
+
+
+
+
+Placement Process Rules
+
+
+18. Registration Requirement:
+
+      To participate in placement opportunities, all allowed students must register on the official
+      Recruitment Manager before the start of the placement season, as notified by T&P.
+
+
+19.   Regular Updates:
+
+      Students    are   advised to regularly check the Recruitment Manager and other official
+      communication channels of the T&P department for various opportunities.
+
+
+20. Email Use:
+
+
+      All students must use their official DTU email ID for job applications, unless specifically
+      asked by the recruiter to use a personal email ID.
+
+
+21. Timeline Adherence:
+
+
+      Students must follow the timelines for application and further processes as set by the T&P
+      department. Once the application acceptance period closes on the Recruitment Manager, no
+      applications will be considered.
+
+
+22. Participation Requirement:
+
+
+      If a student applies for an on-campus opportunity, he/she must participate in every stage
+      (pre-placement talks, assessments, interviews, etc.) as per eligibility. If a student applies but
+      does not attend the presentation or any further rounds, or is late for the company's placement
+      process, he/she will be debarred for a minimum of two weeks.
+
+
+Professional Conduct
+
+23. Unprofessional Behaviour:
+
+
+      Disciplinary action will be taken if a student:
+1.    Expresses unwillingness to join post-offer,
+2.    Speaks negatively about the company, university or any other individual involved in
+      placement,
+3.    Places conditions for joining the company during/after the process,
+4.    Approaches company executives without following protocol (proper Channel through T&P).
+
+Disciplinary Guidelines
+
+[PAGE 6]
+
+29k
+                      DEPARTMENT OF TRAINING AND PLACEMENT
+                            DELHI TECHNOLOGICAL UNIVERSITY
+        DELTECH                    (Formerly Delhi College of Engineering)
+                                             Govt. of NCT of Delhi
+                               Shahbad Daulatpur, Bawana Road, Delhi 110042
+                     Tel: +91-11-27871421, www.dtu.ac.in, Email: placements@dtu.ac.in
+
+
+      24. Absenteeism or Tardiness: Absence or lateness to any scheduled company process without
+          prior notice will result in a minimum two-week debarment.
+
+
+      25. Misconduct: Misbehaviour with Placement coordinators, faculty, or company officials will
+            result in debarment for the whole semester.
+
+
+      26. Unfair Means in Assessments: Copying or misconduct in online/offline tests will lead to
+            complete season debarment.
+
+
+      27. Social media Policy: Posting        company-related information     on   social media or other
+            platforms is prohibited and will result in disciplinary action.
+
+      28. Announcement Protocol: Announcements or information regarding selection may be
+          posted on social media platforms only after the release of the offer letter by the company.
+
+
+      29.   Negative Campaigns: The T&P department strongly discourages any negative campaign,
+            vulgar messages, or threats against any individual, recruiter, department, or university. Any
+            student found engaging in such activities will be debarred from placement activities for the
+            entire season and will face disciplinary action.
+
+      Attendance
+
+      30. Attendance Marking: Students participating in placement processes must mark their
+          attendance at T&P. The concerned placement coordinator (PC) shall maintain the attendance
+            record and submit it to the T&P office within two working days of the process completion
+            of each company's process.
+
+
+      31. Attendance Compliance: Students failing to meet the university's attendance criteria may
+            face debarment for one semester or offer cancellation.
+
+
+      Guidelines for Diversity Hiring
+
+      32. The candidates applying for diversity hiring opportunities like PwD must have          a   valid
+            certificate. The same shall be submitted during their registration on Resume manager to the
+            T&P department.
+
+
+      33. Code of Conduct
+
+
+
+      A. WhatsApp Communication:
+
+            All placement-related messages must include the student's real name and roll number.
+
+            Nicknames, aliases, or abbreviations are strictly prohibited.
+      B. Dress Code:
+
+[PAGE 7]
+
+0
+                                                                                                            28/
+                     DEPARTMENT OF TRAINING AND PLACEMENT
+                             DELHI TECHNOLOGICAL UNIVERSITY
+     DEL    ECH                     (Formerly Delhi College of Engineering)
+                                             Govt. of NCT of Delhi
+      NOLOGIC
+                              Shahbad Daulatpur, Bawana Road, Delhi 110042
+                    Tel: +91-11-27871421, www.dtu.ac.in, Email: placements@dtu.ac.in
+
+
+For B.Tech/M.Tech/M.Sc./PhD/B. Des/M. Des Students
+
+      Summer: Blue formal shirt with black formal trousers or skirt.
+
+      Winter: Blue formal shirt, black trousers or skirt, black blazer, and black tie.
+
+For BBA/BAE/MBA/MAE Students
+
+      Summer: White formal shirt with black formal trousers or skirt.
+
+      Winter: White formal shirt, black trousers or skirt, black blazer, and black tie.
+
+C. Exam/Interview Essentials:
+
+      Students must carry: a hard copy of their resume, rough sheets, pen, and University ID card.
+
+D. Use of Electronics:
+
+       Mobile phones and electronic devices are prohibited during tests.
+
+      Violations will lead to disciplinary action
+
+In any case exception al case not covered above, Hon'ble Vice-Chancellor can decide on the
+criteria.
+
+
+
+
+                                                                                 Prof. Anil Singh Parihar
+                                                                                             HoD (T&P)
+
+
+Copy to:        -
+
+
+
+
+1.     PA to VC:      -   for kind information to the Hon'ble Vice Chancellor.
+2.     PA to Registrar: - for kind information.
+3.     Head, Computer Centre with the request to upload on DTU website.
+4.     Dean Academic (UG/PG)
+5.     All Dean/HODs
+6.     All Notice Boards.

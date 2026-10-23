@@ -1,0 +1,29 @@
+{
+  "attendance_rule": "ATT-DTU-ORD-R1B22",
+  "attendance_threshold": 75.0,
+  "exact_case": {
+    "student": "S1001",
+    "course": "CS201",
+    "held": 100,
+    "attended": 75
+  },
+  "one_class_below": {
+    "student": "S1002",
+    "course": "CS201",
+    "held": 100,
+    "attended": 74
+  },
+  "pass_rule": "PASS-DTU-ORD-TABLE4",
+  "pass_percent": 35.0,
+  "one_mark_below_pass_result": {
+    "student": "S1003",
+    "course": "CS201",
+    "total_marks": 34
+  },
+  "absent": "S1004/CS201",
+  "detained": "S1005/CS201",
+  "multiple_backlogs": "S1006",
+  "placement_boundary_student": "S1007",
+  "placement_cutoff": 6.0,
+  "note": "Boundary rows were applied in Python using current source-linked registry rules; the profile seed does not claim to generate the exact boundaries."
+}

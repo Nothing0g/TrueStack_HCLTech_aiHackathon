@@ -1,0 +1,21 @@
+SYNTHETIC DATA VALIDATION: PASS
+{
+  "students": 30,
+  "courses": 6,
+  "attendance_rows": 90,
+  "result_rows": 90,
+  "programmes": [
+    "B.Tech CSE",
+    "B.Tech Mechanical Engineering"
+  ],
+  "batches": [
+    2023,
+    2024
+  ],
+  "attendance_boundary_rule": "ATT-DTU-ORD-R1B22",
+  "attendance_threshold": 75.0,
+  "pass_rule": "PASS-DTU-ORD-TABLE4",
+  "pass_threshold": 35.0,
+  "placement_cutoff": 6.0
+}
+Errors: none

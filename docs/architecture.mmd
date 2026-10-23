@@ -1,0 +1,16 @@
+flowchart TD
+  U[Student] --> UI[Streamlit frontend]
+  UI --> API[FastAPI + Pydantic v2]
+  API --> G[LangGraph workflow controller]
+  G -->|Policy and procedure| RAG[Sentence Transformers + persistent ChromaDB]
+  G -->|Personal record and eligibility| T[Deterministic Python tools]
+  T --> DB[(SQLite: students, courses, attendance, results, rule registry)]
+  RAG --> V[Evidence, source-precedence and safety checks]
+  DB --> V
+  V --> L[Local Qwen through Ollama]
+  L --> Q[Response and citation validation]
+  Q --> A[Answer + citations + trace ID + audit]
+  ING[POST /ingest: upload + metadata] --> EXT[Extract and chunk text]
+  EXT --> RAG
+  EXT --> SR[(SQLite source register)]
+  ADMIN[Candidate rule validation + activation] --> DB

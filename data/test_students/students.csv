@@ -1,0 +1,31 @@
+student_id,full_name,programme,batch_year,current_semester,cgpa,active_backlogs
+S1001,Aarav Mehta,B.Tech CSE,2023,7,7.4,1
+S1002,Anaya Kapoor,B.Tech CSE,2024,5,6.9,1
+S1003,Kabir Sethi,B.Tech CSE,2023,7,6.2,2
+S1004,Meera Nair,B.Tech CSE,2024,5,7.1,2
+S1005,Ishaan Bhatia,B.Tech CSE,2023,7,5.7,1
+S1006,Diya Khanna,B.Tech CSE,2024,7,6.1,3
+S1007,Rohan Malhotra,B.Tech CSE,2023,5,6.0,0
+S1008,Aditi Rao,B.Tech CSE,2024,7,8.4,0
+S1009,Vihaan Arora,B.Tech CSE,2023,5,7.8,1
+S1010,Sara Iyer,B.Tech CSE,2024,7,6.6,0
+S1011,Arjun Gill,B.Tech CSE,2023,5,7.2,1
+S1012,Myra Bose,B.Tech CSE,2024,7,8.1,0
+S1013,Devansh Jain,B.Tech CSE,2023,5,5.9,0
+S1014,Kiara Dutta,B.Tech CSE,2024,7,7.6,1
+S1015,Advik Menon,B.Tech CSE,2023,5,6.8,0
+S1016,Saanvi Verma,B.Tech Mechanical Engineering,2024,7,7.3,0
+S1017,Reyansh Sood,B.Tech Mechanical Engineering,2023,5,6.4,0
+S1018,Tara Chawla,B.Tech Mechanical Engineering,2024,7,8.0,0
+S1019,Kian Fernandes,B.Tech Mechanical Engineering,2023,5,5.8,1
+S1020,Ira Mukherjee,B.Tech Mechanical Engineering,2024,7,7.9,0
+S1021,Atharv Saxena,B.Tech Mechanical Engineering,2023,5,6.7,0
+S1022,Nisha Thomas,B.Tech Mechanical Engineering,2024,7,8.6,1
+S1023,Yuvaan Oberoi,B.Tech Mechanical Engineering,2023,5,7.0,0
+S1024,Avni Kulkarni,B.Tech Mechanical Engineering,2024,7,6.3,1
+S1025,Krish Ahuja,B.Tech Mechanical Engineering,2023,5,7.5,0
+S1026,Riya Das,B.Tech Mechanical Engineering,2024,7,6.1,1
+S1027,Samarth Puri,B.Tech Mechanical Engineering,2023,5,8.2,0
+S1028,Vanya Bedi,B.Tech Mechanical Engineering,2024,7,5.6,0
+S1029,Neil Fernandes,B.Tech Mechanical Engineering,2023,5,7.7,1
+S1030,Anvi Shekhar,B.Tech Mechanical Engineering,2024,7,6.5,1

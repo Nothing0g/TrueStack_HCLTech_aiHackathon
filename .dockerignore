@@ -1,0 +1,18 @@
+# Local runtime and VCS
+.git
+.venv
+venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.coverage
+.env
+
+# Persisted runtime databases and model cache
+storage/*
+!storage/chroma/.gitkeep
+.model-cache
+
+# Large source PDFs are mounted via ./data at runtime; sidecar text is included in image.
+data/original_pdfs/*.pdf
+data/documents/official/*.pdf

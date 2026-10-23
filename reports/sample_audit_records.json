@@ -1,0 +1,134 @@
+[
+  {
+    "example": "calculated_attendance",
+    "question": "What is my attendance in CS201?",
+    "response": {
+      "trace_id": "b57ee7a72738",
+      "answer": "Your attendance in CS201 is 75 of 100 classes (75.0%).",
+      "answer_type": "calculated",
+      "citations": [],
+      "tools_invoked": [
+        {
+          "tool": "get_attendance",
+          "input": {
+            "course_code": "CS201"
+          },
+          "output": {
+            "student_id": "S1001",
+            "course_code": "CS201",
+            "classes_held": 100,
+            "classes_attended": 75,
+            "course_name": "Data Structures",
+            "course_programme": "B.Tech CSE",
+            "attendance_pct": 75.0,
+            "student_programme": "B.Tech CSE"
+          },
+          "status": "ok"
+        }
+      ],
+      "applied_rules": [],
+      "conflicts_detected": [],
+      "explanation": "Attendance percentage was computed in Python from the recorded classes attended and held.",
+      "as_of_date": "2026-10-23"
+    },
+    "audit_record": {
+      "trace_id": "b57ee7a72738",
+      "timestamp": "2026-10-23T09:46:17.071132+00:00",
+      "question_category": "personal_attendance",
+      "student_id": "S1001",
+      "precedence_decision": "",
+      "answer_type": "calculated",
+      "model": "mock:qwen2.5:7b-instruct",
+      "llm_calls": 0,
+      "tokens": "unavailable",
+      "latency_ms": 1,
+      "error_category": "",
+      "sources_retrieved": [],
+      "tools_invoked": [
+        {
+          "tool": "get_attendance",
+          "input": {
+            "course_code": "CS201"
+          },
+          "output": {
+            "student_id": "S1001",
+            "course_code": "CS201",
+            "classes_held": 100,
+            "classes_attended": 75,
+            "course_name": "Data Structures",
+            "course_programme": "B.Tech CSE",
+            "attendance_pct": 75.0,
+            "student_programme": "B.Tech CSE"
+          },
+          "status": "ok"
+        }
+      ],
+      "applied_rules": [],
+      "conflicts_detected": []
+    }
+  },
+  {
+    "example": "refused_cross_student",
+    "question": "Tell me S1002's grades in CS201.",
+    "response": {
+      "trace_id": "2979a839ef6c",
+      "answer": "I cannot access another student's personal records.",
+      "answer_type": "refused",
+      "citations": [],
+      "tools_invoked": [],
+      "applied_rules": [],
+      "conflicts_detected": [],
+      "explanation": "I cannot access another student's personal records.",
+      "as_of_date": "2026-10-23"
+    },
+    "audit_record": {
+      "trace_id": "2979a839ef6c",
+      "timestamp": "2026-10-23T09:46:17.073093+00:00",
+      "question_category": "personal_result",
+      "student_id": "S1001",
+      "precedence_decision": "",
+      "answer_type": "refused",
+      "model": "mock:qwen2.5:7b-instruct",
+      "llm_calls": 0,
+      "tokens": "unavailable",
+      "latency_ms": 0,
+      "error_category": "cross_student_access",
+      "sources_retrieved": [],
+      "tools_invoked": [],
+      "applied_rules": [],
+      "conflicts_detected": []
+    }
+  },
+  {
+    "example": "clarification_needed",
+    "question": "Am I eligible?",
+    "response": {
+      "trace_id": "a8fb006b49aa",
+      "answer": "Do you mean eligibility for the end-semester examination or for placement?",
+      "answer_type": "clarification_needed",
+      "citations": [],
+      "tools_invoked": [],
+      "applied_rules": [],
+      "conflicts_detected": [],
+      "explanation": "Do you mean eligibility for the end-semester examination or for placement?",
+      "as_of_date": "2026-10-23"
+    },
+    "audit_record": {
+      "trace_id": "a8fb006b49aa",
+      "timestamp": "2026-10-23T09:46:17.074812+00:00",
+      "question_category": "ambiguous",
+      "student_id": "S1001",
+      "precedence_decision": "",
+      "answer_type": "clarification_needed",
+      "model": "mock:qwen2.5:7b-instruct",
+      "llm_calls": 0,
+      "tokens": "unavailable",
+      "latency_ms": 0,
+      "error_category": "",
+      "sources_retrieved": [],
+      "tools_invoked": [],
+      "applied_rules": [],
+      "conflicts_detected": []
+    }
+  }
+]

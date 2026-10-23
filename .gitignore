@@ -1,0 +1,22 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.DS_Store
+storage/*.db
+storage/*.db-shm
+storage/*.db-wal
+storage/chroma/**
+!storage/chroma/.gitkeep
+.model-cache/
+reports/generation_raw.json
+
+# Official scanned PDFs are provided by the user and are large; text sidecars are versioned.
+data/original_pdfs/*.pdf
+data/documents/official/*.pdf
+data/extracted/*_pages/
+reports/data_generation_fallback.txt

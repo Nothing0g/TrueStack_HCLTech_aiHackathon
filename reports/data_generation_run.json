@@ -1,0 +1,34 @@
+{
+  "timestamp_utc": "2026-10-23T09:53:01.894605+00:00",
+  "provider": "bundled_ai_profile_seed",
+  "model": "GPT-6 (AI-authored bundled fictional profile seed; exact deployment identifier unavailable)",
+  "configured_ollama_model": "qwen2.5:7b-instruct",
+  "student_profiles_model_generated": false,
+  "bundled_seed_is_ai_authored": true,
+  "seed": 23026,
+  "students": 30,
+  "courses": 6,
+  "attendance_rows": 90,
+  "result_rows": 90,
+  "attendance_rule": {
+    "rule_id": "ATT-DTU-ORD-R1B22",
+    "operator": ">=",
+    "value": "75",
+    "source_doc_id": "DTU-BTECH-ORD-2025",
+    "source_section": "R.1(B).22"
+  },
+  "pass_rule": {
+    "rule_id": "PASS-DTU-ORD-TABLE4",
+    "operator": ">=",
+    "value": 35.0,
+    "source_doc_id": "DTU-BTECH-ORD-2025",
+    "source_section": "Table 4: Structure for Grading of Academic Performance"
+  },
+  "placement_rule": {
+    "rule_id": "PLACE-CGPA-01",
+    "value": "6.0",
+    "source_doc_id": "SYN-DEMO-REG-001",
+    "source_section": "9.1"
+  },
+  "notes": "The LLM generates fictional profile fields when Ollama is available; otherwise the bundled AI-authored profile seed is used. Python generates relational attendance/result rows and patches exact boundary cases from validated source-linked rules. No real student data is used."
+}
