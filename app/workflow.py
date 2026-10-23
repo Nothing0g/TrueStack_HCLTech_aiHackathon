@@ -99,7 +99,11 @@ def classify(question: str) -> tuple[str, str | None]:
         "supplementary exam", "supplementary examination", "reappear", "back paper",
         "course registration", "cgpa cutoff", "cgpa cut-off", "student record",
         "academic rule", "at my university", "our university", "university's", "university’s",
-        "in university policy",
+        "in university policy", "synthetic demo", "fictional demo", "attendance threshold",
+        "threshold applies", "attendance amendment", "amendment supersede", "supersedes",
+        "supersede", "baseline attendance", "policy conflict", "document version",
+        "which version", "which rule applies", "source precedence", "authority level",
+        "hostel mess fee", "mess fee", "hostel fee", "exact hostel",
     )
     if any(term in q for term in policy_indicators):
         return "policy", course
