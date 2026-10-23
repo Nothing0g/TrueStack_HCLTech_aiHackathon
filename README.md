@@ -96,7 +96,7 @@ pip install -r requirements.txt
 Copy-Item .env.example .env
 ```
 
-On Linux/macOS, use `python3.11 -m venv .venv` and `source .venv/bin/activate`; replace `Copy-Item` with `cp .env.example .env`.
+On Linux/macOS, use `python3.11 -m venv .venv` and `source .venv/bin/activate`; replace `Copy-Item` with `cp .env.example .env`. For a direct host-Python run (not Docker), set `OLLAMA_BASE_URL=http://localhost:11434` in `.env`; `host.docker.internal` is the Docker-container address for reaching Ollama on the host.
 
 For scanned uploads, install Tesseract OCR and Poppler utilities. Use the supplied text sidecars for the initial corpus.
 
