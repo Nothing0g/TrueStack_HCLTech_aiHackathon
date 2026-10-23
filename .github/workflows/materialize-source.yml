@@ -1,0 +1,29 @@
+name: Materialize TrueStack source
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  materialize:
+    if: contains(github.event.head_commit.message, 'bootstrap: materialize project source')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Restore project source archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -d bootstrap/chunks
+          cat bootstrap/chunks/*.b64 | tr -d '\n' | base64 --decode > /tmp/truestack-source.tar.xz
+          mkdir -p /tmp/truestack
+          tar -xJf /tmp/truestack-source.tar.xz -C /tmp/truestack
+          cp -a /tmp/truestack/TrueStack_HCLTech_aiHackathon/. .
+          rm -rf bootstrap
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: add TrueStack student services assistant"
+          git push origin HEAD:main
