@@ -88,19 +88,22 @@ def classify(question: str) -> tuple[str, str | None]:
     if q.strip().rstrip("?.! ") in {"am i eligible", "am i eligible for"}:
         return "ambiguous", course
 
-    # Keep university-specific policy questions grounded in authorised sources.
-    # Ordinary knowledge, definitions, writing help and programming questions go to Qwen directly.
-    policy_terms = (
-        "dtu", "delhi technological university", "admission", "admissions", "attendance",
-        "exam", "examination", "assessment", "placement policy", "placement eligibility",
-        "scholarship", "fee policy", "hostel policy", "ordinance", "regulation", "circular",
-        "policy", "policies", "eligibility", "supplementary", "reappear", "back paper",
-        "course registration", "cgpa cutoff", "cgpa cut-off", "student record", "academic rule",
+    # Route institution-specific policy claims to RAG. Generic definitions and
+    # ordinary knowledge questions use Qwen directly, even if they mention a broad topic.
+    policy_indicators = (
+        "dtu", "delhi technological university", "policy", "policies", "ordinance",
+        "regulation", "circular", "eligibility", "admission criteria", "admission process",
+        "minimum attendance", "attendance requirement", "exam eligibility",
+        "examination eligibility", "placement cutoff", "placement cut-off",
+        "placement eligibility", "scholarship policy", "fee policy", "hostel policy",
+        "supplementary exam", "supplementary examination", "reappear", "back paper",
+        "course registration", "cgpa cutoff", "cgpa cut-off", "student record",
+        "academic rule", "at my university", "our university", "university's", "university’s",
+        "in university policy",
     )
-    if any(term in q for term in policy_terms):
+    if any(term in q for term in policy_indicators):
         return "policy", course
     return "general_knowledge", course
-
 
 def citation_from(passage: dict[str, Any]) -> dict[str, Any]:
     m = passage.get("metadata", {})
