@@ -78,3 +78,15 @@ def test_general_chat_is_not_mislabeled_as_policy():
 def test_broad_definition_routes_to_general_qwen():
     category, _ = workflow.classify("What is a scholarship?")
     assert category == "general_knowledge"
+
+
+
+def test_synthetic_version_and_missing_policy_questions_stay_grounded():
+    policy_questions = [
+        "For the synthetic demo scenario, which attendance threshold applies on 2026-10-23?",
+        "In the synthetic demo only, does the 80% attendance amendment supersede the baseline attendance FAQ?",
+        "What is the exact hostel mess fee for a student in 2026-27?",
+    ]
+    for question in policy_questions:
+        category, _ = workflow.classify(question)
+        assert category == "policy", (question, category)
