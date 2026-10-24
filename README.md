@@ -5,6 +5,17 @@ Local-first RAG + deterministic tools + one LangGraph workflow.
 
 > **Demo data warning:** The student records bundled with this project are fictional. Two bundled policy documents are marked **SYNTHETIC DEMO — NOT OFFICIAL DTU POLICY**. They exist to demonstrate gaps, rule activation and policy-version handling. They must not be used for real academic decisions.
 
+
+## Hackathon team
+
+Built for the **HCLTech Future Ready AI Engineer Hackathon** by a three-person team:
+
+- **Shubham Kumar** ([Nothing0g](https://github.com/Nothing0g)) — team lead; drove problem breakdown, architecture and workflow decisions, coordinated integration, and prepared the end-to-end technical walkthrough.
+- **Prashant Nagwan** ([nagwanprashant22-alt](https://github.com/nagwanprashant22-alt)) — teammate; collaborated on the solution development and hackathon delivery.
+- **Sahil Azad** — teammate; collaborated on the solution development and hackathon delivery.
+
+We worked as one team under time pressure, turning the use case into a practical workflow with grounded retrieval, deterministic calculations, privacy checks and auditable responses. The design and demo decisions were coordinated centrally so the components could fit together and be explained clearly to the judges.
+
 ## What it does
 
 - Answers ordinary general-knowledge and programming questions directly with local Qwen.
