@@ -14,7 +14,40 @@ Built for the **HCLTech Future Ready AI Engineer Hackathon** by a three-person t
 - **Prashant Nagwan** ([nagwanprashant22-alt](https://github.com/nagwanprashant22-alt)) — teammate; collaborated on the solution development and hackathon delivery.
 - **Sahil Azad** — teammate; collaborated on the solution development and hackathon delivery.
 
-We worked as one team under time pressure, turning the use case into a practical workflow with grounded retrieval, deterministic calculations, privacy checks and auditable responses. The design and demo decisions were coordinated centrally so the components could fit together and be explained clearly to the judges.
+### Team responsibilities
+
+The work was divided by component so each part could be developed independently and then brought together into one working flow.
+
+**Member 1 — Shubham Kumar | Team Lead, Backend & Integration**
+
+- Set the project structure, architecture and shared interfaces.
+- Built the FastAPI endpoints and Pydantic request/response validation.
+- Led the central LangGraph workflow and routing design.
+- Connected policy retrieval and deterministic tools into the end-to-end path.
+- Coordinated response structure, trace IDs, audit logging, integration, testing and demo preparation.
+
+*Deliverable:* An integrated application that routes questions and returns structured responses.
+
+**Member 2 — Prashant Nagwan | RAG & Document Intelligence**
+
+- Worked on university policy documents and their source metadata.
+- Handled document text/section/page, version and effective-date considerations.
+- Contributed to Sentence Transformers embeddings, ChromaDB retrieval and source-backed citations.
+- Worked on document ingestion, policy version/conflict handling and unsupported-question behaviour.
+
+*Deliverable:* Policy retrieval that returns relevant evidence with citation metadata.
+
+**Member 3 — Sahil Azad | Student Data & Deterministic Tools**
+
+- Worked on the SQLite schema and synthetic student dataset.
+- Contributed to data loading and validation.
+- Handled deterministic Python tools for attendance, marks and eligibility scenarios.
+- Worked with the rule registry and student identity safeguards, including X-Student-Id.
+- Helped test tool results and support the minimal chat interface as needed.
+
+*Deliverable:* Database tools for deterministic, authorised student-record results.
+
+The Streamlit interface, integration testing and final demo were team efforts, with overall architecture and end-to-end integration coordinated by the team lead. This division describes the team's intended ownership areas; individual contributions should be represented accurately in any formal submission.
 
 ## What it does
 
